@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #17a496, #07819a);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        #theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        body.dark-mode h2 {
+            border-bottom-color: #f4f4f4;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            background: white;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        body.dark-mode li {
+            background: #2a2a2a;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        li a {
+            color: #109ba5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact p {
+            margin-bottom: 1rem;
+        }
+
+        .contact a {
+            color: #109ba5;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #333;
+            font-size: 2rem;
+            transition: color 0.3s, transform 0.2s;
+        }
+
+        body.dark-mode .social-links a {
+            color: #f4f4f4;
+        }
+
+        .social-links a:hover {
+            color: #05a890;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .social-links a {
+                font-size: 1.5rem;
+            }
+        }
+
+        .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+.skills-list li {
+    background: #0ac7b1;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+body.dark-mode .skills-list li {
+    background: #08a6a1;
+}
+
+.skills-list li:hover {
+    transform: scale(1.1);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #333;
+}
+
+body.dark-mode .profile-pic {
+    border-color: #f4f4f4;
+}
+
+@media (max-width: 600px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <button id="theme-toggle">🌙</button>
+        <h1> Lubna Shaikh</h1>
+        <p>I'm a Software Engineer </p>
+    </header>
+  
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML & CSS</li>
+            <li>React</li>
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>Git</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+    
+
+        <ul>
+            <li>
+               
+                  <a href="https://github.com/lubie-max/splitwise-">Splitwice Backend with Spring Boot</a> This is the clone of the Splitwise app. It is a web application that helps you keep track of your shared expenses. It allows you to add expenses, split them with your friends, and settle them up. It also shows you a summary of all your expenses.
+            </li>
+            <li>
+                <a href="https://github.com/lubie-max/ChatApp-React">ChatApp-React</a> - This is a chat application built using React. It allows you to send and receive messages in real-time. It also shows you when a user is typing a message. It uses Firebase for authentication and Firestore for storing messages.
+            </li>
+            <li>
+                <a href="https://github.com/lubie-max/react-drf-ecommerce-app-backend">Ecommerce Backend with Django</a> - This is the Ecommerce Backend written in Python using Django. It provides REST APIs for managing products, categories, orders, and users. It also provides authentication using JWT tokens.
+            </li>
+
+            <li>
+                <a href="https://github.com/lubie-max/js-dom-with-rock-paper-scissor">DOM manipulation with Vanila JavaScript </a> - DOM manipulation with Vanila JavaScript. Created a Rock Paper Scissor game by manipulating DOM.
+            </li>
+        </ul>
+    </section>
+
+    <section class="contact">
+        <p>Contact me: <a href="iamlubna.shaikh@gmail.com">iamlubna.shaikh@gmail.com</a></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/im-lubna-shaikh/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/lubie-max" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/u/Lubiey/" target="_blank" title="LeetCode"><i class="fas fa-code"></i></a>
+        </div>
+    </section>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+
+        // Smooth Scroll for Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
