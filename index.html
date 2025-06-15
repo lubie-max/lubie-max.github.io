@@ -6,164 +6,182 @@
     <title>Your Name - Portfolio</title>
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+        /* RESET + BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
-        body {
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-        }
+body {
+    background: linear-gradient(135deg, rgba(97, 133, 199, 0.9), rgba(207, 222, 243, 0.9)),
+                url('https://unsplash.com/photos/blue-and-white-abstract-art-VT4rx775FT4');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
 
-        body.dark-mode {
-            background-color: #1a1a1a;
-            color: #f4f4f4;
-        }
 
-        header {
-            background: linear-gradient(135deg, #17a496, #07819a);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-        }
+body.dark-mode {
+    background: linear-gradient(135deg, rgba(61, 86, 99, 0.85), rgba(65, 67, 69, 0.85)),
+                url('https://unsplash.com/photos/empty-road-surrounded-buildings-yAeUPmbyS-0');
+    background-size: cover;
+    background-position: center;
+    color: #f4f4f4;
+}
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
+/* HEADER */
+header {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
 
-        #theme-toggle {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: white;
-        }
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
 
-        section {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
-        }
+#theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
 
-        body.dark-mode h2 {
-            border-bottom-color: #f4f4f4;
-        }
+/* SECTION & TITLES */
+section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
 
-        ul {
-            list-style: none;
-        }
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(51, 51, 51, 0.4);
+    padding-bottom: 0.5rem;
+}
 
-        li {
-            background: white;
-            margin: 1rem 0;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+body.dark-mode h2 {
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
 
-        body.dark-mode li {
-            background: #2a2a2a;
-            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-        }
+/* LIST */
+ul {
+    list-style: none;
+}
 
-        li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
+li {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-        li a {
-            color: #109ba5;
-            text-decoration: none;
-            font-weight: bold;
-        }
+body.dark-mode li {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+}
 
-        li a:hover {
-            text-decoration: underline;
-        }
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
-        .contact {
-            text-align: center;
-            margin-top: 2rem;
-        }
+li a {
+    color: #10a9ba;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .contact p {
-            margin-bottom: 1rem;
-        }
+li a:hover {
+    text-decoration: underline;
+}
 
-        .contact a {
-            color: #109ba5;
-            text-decoration: none;
-        }
+/* CONTACT */
+.contact {
+    text-align: center;
+    margin-top: 2rem;
+}
 
-        .contact a:hover {
-            text-decoration: underline;
-        }
+.contact p {
+    margin-bottom: 1rem;
+}
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
+.contact a {
+    color: #109ba5;
+    text-decoration: none;
+}
 
-        .social-links a {
-            color: #333;
-            font-size: 2rem;
-            transition: color 0.3s, transform 0.2s;
-        }
+.contact a:hover {
+    text-decoration: underline;
+}
 
-        body.dark-mode .social-links a {
-            color: #f4f4f4;
-        }
+/* SOCIAL ICONS */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
 
-        .social-links a:hover {
-            color: #05a890;
-            transform: scale(1.2);
-        }
+.social-links a {
+    color: #333;
+    font-size: 2rem;
+    transition: color 0.3s, transform 0.2s;
+}
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
+body.dark-mode .social-links a {
+    color: #f4f4f4;
+}
 
-            header p {
-                font-size: 1rem;
-            }
+.social-links a:hover {
+    color: #05a890;
+    transform: scale(1.2);
+}
 
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .social-links a {
-                font-size: 1.5rem;
-            }
-        }
-
-        .skills-list {
+/* SKILLS */
+.skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -171,22 +189,26 @@
 }
 
 .skills-list li {
-    background: #0ac7b1;
-    color: white;
+    background: rgba(10, 199, 177, 0.2);
+    color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: transform 0.2s;
 }
 
 body.dark-mode .skills-list li {
-    background: #08a6a1;
+    background: rgba(8, 166, 161, 0.3);
 }
 
 .skills-list li:hover {
     transform: scale(1.1);
 }
 
+/* ABOUT */
 .about-content {
     display: flex;
     align-items: center;
@@ -206,7 +228,81 @@ body.dark-mode .profile-pic {
     border-color: #f4f4f4;
 }
 
+/* 
+BloB effect */
+.blob-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.blob {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #10a9ba, #0ac7b1);
+    opacity: 0.2;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 25s infinite ease-in-out;
+    top: 20%;
+    left: 30%;
+}
+
+.blob2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    top: 60%;
+    left: 70%;
+    animation-delay: 5s;
+}
+
+.blob3 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #f5d020, #f53803);
+    top: 40%;
+    left: 10%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(50px, -60px) scale(1.2);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+
+
+/* MEDIA QUERIES */
 @media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .social-links a {
+        font-size: 1.5rem;
+    }
+
     .about-content {
         flex-direction: column;
         text-align: center;
@@ -217,7 +313,9 @@ body.dark-mode .profile-pic {
         height: 120px;
     }
 }
+
     </style>
+
 </head>
 <body>
     <header>
@@ -228,9 +326,15 @@ body.dark-mode .profile-pic {
     <script>
         document.title = "Lubna Shaikh - Portfolio";
     </script>
-  
+    <!-- Blob for morpho efect -->
+     <div class="blob-container">
+  <div class="blob"></div>
+  <div class="blob blob2"></div>
+  <!-- <div class="blob blob3"></div> -->
+</div>
+
     <section id="skills">
-        <h2>Skills</h2>
+        <h2>Technical Skills</h2>
         <ul class="skills-list">
             <li>Java</li>
             <li>Python</li>
@@ -239,8 +343,17 @@ body.dark-mode .profile-pic {
             <li>Spring Boot</li>
             <li>HTML & CSS</li>
             <li>Git</li>
+            <li>Microservices</li>
+            <li>Kafka</li>
         </ul>
     </section>
+
+    <!-- Blob for morpho efect -->
+     <div class="blob-container">
+  <div class="blob"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</div>
 
     <section id="projects">
         <h2>Projects</h2>
@@ -272,6 +385,12 @@ body.dark-mode .profile-pic {
             <a href="https://leetcode.com/u/Lubiey/" target="_blank" title="LeetCode"><i class="fas fa-code"></i></a>
         </div>
     </section>
+      <!-- Blob for morpho efect -->
+     <div class="blob-container">
+  <div class="blob"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</div>
 
     <script>
         // Theme Toggle
