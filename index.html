@@ -16,12 +16,22 @@
     font-family: 'Arial', sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
     background: linear-gradient(135deg, rgba(97, 133, 199, 0.9), rgba(207, 222, 243, 0.9)),
                 url('https://unsplash.com/photos/blue-and-white-abstract-art-VT4rx775FT4');
     background-size: cover;
     background-position: center;
-    color: #333;
+    color: #21282c;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
     backdrop-filter: blur(4px);
@@ -40,7 +50,7 @@ body.dark-mode {
 
 /* HEADER */
 header {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(52, 43, 43, 0.15);
     padding: 2rem;
     text-align: center;
     position: relative;
@@ -64,15 +74,17 @@ header p {
 }
 
 #theme-toggle {
-    position: absolute;
-    top: 1rem;
+    position: static;
+    /* top: 1rem; */
+    bottom: 0.6rem; 
+    justify-content: center;
     right: 1rem;
     background: rgba(255, 255, 255, 0.2);
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 30%;
     padding: 0.5rem;
 }
 
@@ -92,7 +104,7 @@ section {
 h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid rgba(51, 51, 51, 0.4);
+    border-bottom: 2px solid rgba(59, 51, 51, 0.4);
     padding-bottom: 0.5rem;
 }
 
@@ -129,7 +141,7 @@ li:hover {
 }
 
 li a {
-    color: #10a9ba;
+    color: #0c7b87;
     text-decoration: none;
     font-weight: bold;
 }
@@ -184,14 +196,15 @@ body.dark-mode .social-links a {
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: center;
+    gap: 0.5rem;
     list-style: none;
 }
 
 .skills-list li {
     background: rgba(10, 199, 177, 0.2);
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.5rem;
     border-radius: 20px;
     font-size: 0.9rem;
     backdrop-filter: blur(6px);
@@ -221,11 +234,13 @@ body.dark-mode .skills-list li {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #333;
+    border: none;
+    box-shadow: 10px 4px 10px rgba(27, 1, 1, 0.1);
+    transition: border-color 0.3s, transform 0.2s;
 }
 
 body.dark-mode .profile-pic {
-    border-color: #f4f4f4;
+    border-color: #e3dcdc;
 }
 
 /* 
@@ -311,27 +326,132 @@ BloB effect */
     .profile-pic {
         width: 120px;
         height: 120px;
+        
     }
 }
 
+/* Navbar */
+.glass-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Dark Mode Support */
+body.dark-mode .glass-navbar {
+  background: rgba(30, 30, 30, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .nav-links a {
+  color: #f4f4f4;
+}
+
+@media (max-width: 600px) {
+  .glass-navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* sticky */
+/* .glass-navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+} */
+
+
+
+
+
+
+
+
     </style>
+
+
 
 </head>
 <body>
-    <header>
-        <button id="theme-toggle">🌙</button>
-        <h1>Lubna Shaikh</h1>
-        <p>I'm a Software Engineer</p>
-    </header>
+
+<header class="glass-navbar">
+  <nav class="nav-links">
+    <a href="#about">👩‍💻 About Me</a>
+    <a href="#skills">🛠️ Skills</a>
+    <a href="#projects">📂 Projects</a>
+    <a href="#contact">📬 Contact</a>
+    <a href="LubnaShaikh__Java_Microservices.pdf" download>⬇️ Download CV</a>
+    <button id="theme-toggle">🌙</button>
+  </nav>
+</header>
+
+
+    <section id="about">
+        <div class="about-content">
+            <img src="picture3.png" alt="Lubna Shaikh" class="profile-pic">
+
+
+<p>
+  👋 Hello, I'm <strong>Lubna Shaikh</strong> — a full-stack developer 💻 passionate about building clean, functional apps 🚀.
+  My core stack includes <strong>Spring Boot</strong> 🧩, <strong>PostgreSQL</strong> 🐘, and <strong>React.js</strong> ⚛️.
+  <br>
+  I’ve solved <strong>300+ DSA problems</strong> 📊 across coding platforms and love the logic 🧠 and creativity 🎨 behind software development.
+</p>
+
+        
+        </div>
+        <!-- <div class="about-content">
+        
+       
+           <div class="social-links" style="display: flex; justify-content: center; gap: 1rem; size: 20rem;">
+            <a href="https://www.linkedin.com/in/im-lubna-shaikh/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/lubie-max" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/u/Lubiey/" target="_blank" title="LeetCode"><i class="fas fa-code"></i></a>
+        </div>
+       -->
+    </section>
+
     <script>
         document.title = "Lubna Shaikh - Portfolio";
     </script>
-    <!-- Blob for morpho efect -->
-     <div class="blob-container">
-  <div class="blob"></div>
-  <div class="blob blob2"></div>
-  <!-- <div class="blob blob3"></div> -->
-</div>
+ 
+
 
     <section id="skills">
         <h2>Technical Skills</h2>
@@ -341,10 +461,12 @@ BloB effect */
             <li>JavaScript</li>
             <li>React</li>
             <li>Spring Boot</li>
-            <li>HTML & CSS</li>
+            <li>HTML5 & CSS3</li>
             <li>Git</li>
             <li>Microservices</li>
             <li>Kafka</li>
+            <li>REST APIs</li>
+            <li>PostgreSQL</li>
         </ul>
     </section>
 
@@ -360,9 +482,11 @@ BloB effect */
     
 
         <ul>
+              <li>
+               <a href="https://github.com/lubie-max/BookMyShow">BookMyShow Clone</a> - This is a clone of the BookMyShow app. It is a web application that allows users to book movie tickets online. It shows a list of movies, their showtimes, and allows users to select seats and make payments.
+            </li>
             <li>
-               
-                  <a href="https://github.com/lubie-max/splitwise-">Splitwice Backend with Spring Boot</a> This is the clone of the Splitwise app. It is a web application that helps you keep track of your shared expenses. It allows you to add expenses, split them with your friends, and settle them up. It also shows you a summary of all your expenses.
+               <a href="https://github.com/lubie-max/splitwise-">Splitwise Backend with Spring Boot</a> - This is the clone of the Splitwise app. It is a web application that helps you keep track of your shared expenses. It allows you to add expenses, split them with your friends, and settle them up. It also shows you a summary of all your expenses.
             </li>
             <li>
                 <a href="https://github.com/lubie-max/ChatApp-React">ChatApp-React</a> - This is a chat application built using React. It allows you to send and receive messages in real-time. It also shows you when a user is typing a message. It uses Firebase for authentication and Firestore for storing messages.
@@ -377,7 +501,7 @@ BloB effect */
         </ul>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
         <p>Contact me: <a href="iamlubna.shaikh@gmail.com">iamlubna.shaikh@gmail.com</a></p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/im-lubna-shaikh/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -411,6 +535,20 @@ BloB effect */
                 });
             });
         });
+
+
+
+
+
     </script>
+    <script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>
